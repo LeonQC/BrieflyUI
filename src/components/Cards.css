@@ -1,38 +1,24 @@
-.cards {
-    padding: 3rem;
-    background:transparent;
-  }
-  
-  .cards__container {
-    display: inline-block;
-    width: 100%;
-    height: 30%;
-    align-items: center;
-    text-align: center;
-    margin: 10px;
-    padding: 10px;
-    color: #fff;
-  }
+#goals {
+  width: 66rem;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  border-radius: 9px;
+}
 
-  input {
-      width: 55%;
-  }
+#goal-form {
+  width: 70rem;
+  max-width: 90%;
+  margin: 3rem auto 0 auto;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
 
-  .cards-input {
-    padding: 8px 20px;
-    border-radius: 2px;
-    margin-left: 20px;
-    outline: none;
-    border: none;
-    font-size: 30px;
-    margin-bottom: 16px;
-    border: 1px solid #fff;
-    border-radius:10px;
-  }
-  
   @media only screen and (min-width: 1200px) {
     .content__blog__container {
-      width: 84%;
+      width: 100%;
     }
   }
   
