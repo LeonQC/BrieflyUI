@@ -15,7 +15,7 @@ function Footer() {
         </p>
         <div className='input-areas'>
           <form>
-            <Button    className='btns'
+            <Button className='btns'
           buttonStyle='btn--test3'
           buttonSize='btn--large'>Get Start</Button>
           </form>

@@ -56,6 +56,13 @@
 }
 
 
+.btn--large2 {
+  margin:9px;
+  padding: 16px 30px 13px;
+  font-size: 23.5px;
+}
+
+
 .btn--small {
   margin: auto;
   padding: 2px 30px 10px 75px;
@@ -72,11 +79,6 @@
   font-size: 30px;
 }
 
-.btn--large2 {
-  margin:9px;
-  padding: 16px 30px 13px;
-  font-size: 24px;
-}
 
 
 
