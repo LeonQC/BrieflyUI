@@ -18,10 +18,6 @@ const CourseInput = (props) => {
     }, 5000);
   }, []);
 
-  const limit = (string='', limit=0) => {
-    return string.substring(0, limit) + "...";
-  }
-
   const goalInputChangeHandler = (event) => {
     if (event.target.value.trim().length > 0 ) {
       setIsValid(true);
@@ -37,18 +33,14 @@ const CourseInput = (props) => {
       setIsValid(false);
       setErr('Invalid URL');
       return;
-    }else {
-      setIsValid(true);
-      if(enteredValue.trim().length < 50 && isURL(enteredValue)){
-        props.onAddGoal(enteredValue);
-      }else if(enteredValue.trim().length > 50 && isURL(enteredValue)){
-        props.onAddGoal(limit(enteredValue, 50));
-      }
     }
+    childrenRef.current.value = enteredValue;
+    const url = {
+      children : childrenRef.current.value,
+    }
+    props.onAddGoal(url);
   };
-
-  
-  
+    
 
   return (
     <form onSubmit={formSubmitHandler}>
@@ -58,7 +50,6 @@ const CourseInput = (props) => {
         onChange={goalInputChangeHandler}
         ref={childrenRef}
         />
-        
       </div>
       <Button type="submit">Shorten</Button>
        <div>

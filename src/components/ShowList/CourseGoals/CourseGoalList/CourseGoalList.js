@@ -13,19 +13,7 @@ const CourseGoalList = props => {
         children={goal.children}
         onDelete={props.onDeleteItem}
         >
-          <ul className="test">
-            <li className="test1">
-              {goal.text}
-            </li>
-            
-            <li className="test2">
-            {"https://brief.ly/31K0kwi"}
-            </li>
-              <li className="test2"> 
-                <button>copy</button>
-              </li>
-           
-          </ul>
+        {goal.text}
         </CourseGoalItem>
       ))}
     </ul>
@@ -35,3 +23,18 @@ const CourseGoalList = props => {
 export default CourseGoalList;
 
 
+
+/*<ul className="test">
+<li className="test1">
+{goal.text}
+</li>
+
+<li className="test2">
+{"https://brief.ly/31K0kwi"}
+</li>
+<li className="test2"> 
+  <button>copy</button>
+</li>
+
+</ul>
+*/
