@@ -12,6 +12,7 @@ const CourseInput = (props) => {
   const childrenRef = useRef('');
 
 
+
   useEffect(() => {
     setTimeout(function () {
       setShowElement(false);
@@ -34,6 +35,7 @@ const CourseInput = (props) => {
       setErr('Invalid URL');
       return;
     }
+    /*props.onAddGoal(enteredValue);*/
     childrenRef.current.value = enteredValue;
     const url = {
       children : childrenRef.current.value,
