@@ -1,17 +1,17 @@
 import React from 'react';
-import Navbar from './components/Navbar';
+import Header from './components/Pages/Content/Header';
 import './App.css';
-import Home from './components/pages/Home';
+import Home from './components/Pages/Menu/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Services from './components/pages/Services';
-import Products from './components/pages/Products';
-import SignUp from './components/pages/SignUp';
+import Services from './components/Pages/Menu/Services';
+import Products from './components/Pages/Menu/Products';
+import SignUp from './components/Pages/Menu/SignUp';
 
 function App() {
   return (
     <>
       <Router>
-        <Navbar />
+        <Header/>
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/services' component={Services} />
