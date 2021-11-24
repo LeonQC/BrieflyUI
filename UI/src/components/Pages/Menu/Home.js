@@ -2,14 +2,14 @@ import React from 'react';
 import '../../../App.css';
 
 import Body from '../Content/Body';
-import InputForm from '../Content/InputForm';
+import OutputForm from '../Content/OutputForm';
 import Footer from '../Content/Footer';
 
 function Home() {
   return (
     <>
       <Body />
-      <InputForm />
+      <OutputForm />
       <Footer />
     </>
   );
