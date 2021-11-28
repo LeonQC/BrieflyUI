@@ -1,15 +1,15 @@
 import React from 'react';
 
-import './CourseGoalItem.css';
+import './UrlItem.css';
 
-const CourseGoalItem = (props) => {
+const UrlItem = (props) => {
   const deleteHandler = () => {
     props.onDelete(props.id);
   };
 
   const makeid = (length) => {
     var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var characters       = props.id.substring(1, props.id.length);
     var charactersLength = characters.length;
     for ( var i = 0; i < length; i++ ) {
       result += characters.charAt(Math.floor(Math.random() * 
@@ -21,7 +21,7 @@ const CourseGoalItem = (props) => {
 console.log(makeid(5));
 
   return (
-    <li className="goal-item" onClick={deleteHandler}>   
+    <li className="goal-item">   
       <ul className="test">
           <li className="test1">
             <p>{props.children.length < 50 ? props.children : props.children.substring(0, 50) + "..." }</p>
@@ -32,13 +32,13 @@ console.log(makeid(5));
           </li>
 
           <li className="test2"> 
-            <button>copy</button>
+            <button onClick={deleteHandler}>copy</button>
           </li>
         </ul>
     </li>
   );
 };
 
-export default CourseGoalItem;
+export default UrlItem;
 
 
