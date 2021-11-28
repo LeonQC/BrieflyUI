@@ -1,18 +1,20 @@
 
 import React, { useState, useCallback, useEffect } from 'react';
 
-import CourseGoalList from '../../ShowList/CourseGoals/CourseGoalList/CourseGoalList';
-import CourseInput from '../../ShowList/CourseGoals/CourseInput/CourseInput';
-import './InputForm.css';
+import UrlList from '../../ShowList/URL/UrlList/UrlList';
+import UrlInput from '../../ShowList/URL/UrlInput/UrlInput';
+import './OutputForm.css';
 
-const InputForm = () => {
+const OutputForm = () => {
+  
   const [courseGoals, setCourseGoals] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-
   const fetchMoviesHandler = useCallback(async () => {
+    
     setIsLoading(true);
     setError(null);
+   
     try {
       const response = await fetch('https://tinyurl-82ef0-default-rtdb.firebaseio.com/tinyurl.json');
       if (!response.ok) {
@@ -50,7 +52,9 @@ const InputForm = () => {
       }
     });
     const data = await response.json();
+    window.location.reload();
     console.log(data);
+    
     /*
     setCourseGoals((data) => {
       const updatedGoals = [...data];
@@ -73,29 +77,36 @@ const InputForm = () => {
 
   if (courseGoals.length > 0) {
     content = (
-      <CourseGoalList items={courseGoals}  onDeleteItem={deleteItemHandler} />
+      <UrlList items={courseGoals}  onDeleteItem={deleteItemHandler} />
     );
   }
 
   if (error) {
-    content = <p>{error}</p>;
+    return (
+      <section> 
+      <p>{error}</p>
+      </section>
+    )
   }
 
   if (isLoading) {
-    content = <p>Loading...</p>;
+    return (
+    <section> 
+    <p>Loading...</p>
+    </section>
+    )
   }
-
+  
   return (
     <React.Fragment>
       <section id="goal-form">
-        <CourseInput onAddGoal={addGoalHandler} />
+        <UrlInput onAddGoal={addGoalHandler} />
       </section>
       <section>
-      <button onClick={fetchMoviesHandler}>Fetch Movies</button>
       </section>
       <section id="goals">{content}</section>
     </React.Fragment>
   );
 };
 
-export default InputForm;
+export default OutputForm;

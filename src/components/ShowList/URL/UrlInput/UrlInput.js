@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import Button from '../../UI/Button/Button';
-import styles from './CourseInput.module.css';
+import styles from './UrlInput.module.css';
 import isURL from 'validator/lib/isURL';
 
-const CourseInput = (props) => {
+const UrlInput = (props) => {
   const [enteredValue, setEnteredValue] = useState('');
   const [isValid, setIsValid] = useState(true);
   const [err, setErr] = useState('');
@@ -42,7 +42,9 @@ const CourseInput = (props) => {
     }
     props.onAddGoal(url);
   };
-    
+  
+  
+ 
 
   return (
     <form onSubmit={formSubmitHandler}>
@@ -54,6 +56,7 @@ const CourseInput = (props) => {
         />
       </div>
       <Button type="submit">Shorten</Button>
+
        <div>
         {showElement ? (
           <div>
@@ -67,4 +70,4 @@ const CourseInput = (props) => {
   );
 };
 
-export default CourseInput;
+export default UrlInput;

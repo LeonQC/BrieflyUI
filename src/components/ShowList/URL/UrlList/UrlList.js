@@ -1,25 +1,25 @@
 import React from 'react';
 
-import CourseGoalItem from '../CourseGoalItem/CourseGoalItem';
-import './CourseGoalList.css';
+import UrlItem from '../UrlItem/UrlItem';
+import './UrlList.css';
 
-const CourseGoalList = props => {
+const UrlList = props => {
   return (
     <ul className="goal-list">
       {props.items.map(goal => (
-        <CourseGoalItem 
+        <UrlItem 
         key={goal.id} 
         id={goal.id} 
         children={goal.children}
         onDelete={props.onDeleteItem}
         >
-        </CourseGoalItem>
+        </UrlItem>
       ))}
     </ul>
   );
 };
 
-export default CourseGoalList;
+export default UrlList;
 
 
 
