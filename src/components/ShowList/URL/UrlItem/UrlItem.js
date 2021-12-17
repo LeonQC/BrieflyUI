@@ -6,7 +6,7 @@ const UrlItem = (props) => {
   const deleteHandler = () => {
     props.onDelete(props.id);
   };
-
+  /*
   const makeid = (length) => {
     var result           = '';
     var characters       = props.id.substring(1, props.id.length);
@@ -19,16 +19,16 @@ const UrlItem = (props) => {
 }
 
 console.log(makeid(5));
-
+*/
   return (
     <li className="goal-item">   
       <ul className="test">
           <li className="test1">
-            <p>{props.children.length < 50 ? props.children : props.children.substring(0, 50) + "..." }</p>
+            <p>{props.longUrl.length < 50 ? props.longUrl : props.longUrl.substring(0, 50) + "..." }</p>
           </li>
 
           <li className="test2">
-            {"https://brief.ly/" + makeid(5)}
+            {"https://briefly/" + props.shortUrl}
           </li>
 
           <li className="test2"> 

@@ -10,7 +10,8 @@ const UrlList = props => {
         <UrlItem 
         key={goal.id} 
         id={goal.id} 
-        children={goal.children}
+        longUrl={goal.longUrl}
+        shortUrl = {goal.shortUrl}
         onDelete={props.onDeleteItem}
         >
         </UrlItem>
