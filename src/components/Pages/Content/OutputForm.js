@@ -4,6 +4,7 @@ import UrlList from '../../ShowList/URL/UrlList/UrlList';
 import UrlInput from '../../ShowList/URL/UrlInput/UrlInput';
 import './OutputForm.css';
 import axios from 'axios';
+import { render } from '@testing-library/react';
 
 const OutputForm = () => {
   
@@ -49,14 +50,7 @@ const OutputForm = () => {
     fetchMoviesHandler();
   }, [fetchMoviesHandler]);
 
-
 */
-useEffect(() => {
-  axios("http://localhost:8080/api/v1/url/getAll")
-  .then(response => {
-    setCourseGoals(response.data);
-  })
-},[])
 
   async function addGoalHandler(courseGoals){
     const response = await fetch('http://localhost:8080/url/transform/', {
@@ -66,12 +60,24 @@ useEffect(() => {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       }
-    });
+    })
     const data = await response.json();
-    window.location.reload();
     console.log(data);
-    
+    axios.get("http://localhost:8080/api/v1/url/getAll")
+    .then(response => {
+      setCourseGoals(response.data);
+    })
+  };
+
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/api/v1/url/getAll")
+    .then(response => {
+      setCourseGoals(response.data);
+    })
+  },[setCourseGoals])
     /*
+    
     const response = await fetch('https://urltest-417d3-default-rtdb.firebaseio.com/tinyurl.json', {
 
     setCourseGoals((data) => {
@@ -80,20 +86,25 @@ useEffect(() => {
       return updatedGoals;
     });
     */
-  };
-
+ 
+  
   const deleteItemHandler = (goalId) => {
-    setCourseGoals((prevGoals) => {
-      const updatedGoals = prevGoals.filter((goal) => goal.id !== goalId);
-      return updatedGoals;
+    axios.delete(`http://localhost:8080/api/v1/url/delete/${goalId}`)
+    .then(res => {  
+      console.log(res);  
+      console.log(res.data);  
     });
+        setCourseGoals((prevGoals) => {
+        const updatedGoals = prevGoals.filter((goal) => goal.id !== goalId);
+        return updatedGoals;
+        });
   };
 
   let content = (
     <p style={{ textAlign: 'center' }}></p>
   );
 
-  if (courseGoals.length > 0) {
+  if (courseGoals != null) {
     content = (
       <UrlList items={courseGoals}  onDeleteItem={deleteItemHandler} />
     );
@@ -118,7 +129,7 @@ useEffect(() => {
 */
 
 
-
+render() 
   return (
     <React.Fragment>
       <section id="goal-form">

@@ -19,12 +19,15 @@ const UrlItem = (props) => {
 }
 
 console.log(makeid(5));
+
 */
   return (
     <li className="goal-item">   
       <ul className="test">
           <li className="test1">
+            
             <p>{props.longUrl.length < 50 ? props.longUrl : props.longUrl.substring(0, 50) + "..." }</p>
+            
           </li>
 
           <li className="test2">
