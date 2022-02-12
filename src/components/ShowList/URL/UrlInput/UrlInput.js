@@ -9,7 +9,7 @@ const UrlInput = (props) => {
   const [isValid, setIsValid] = useState(true);
   const [err, setErr] = useState('');
   const [showElement, setShowElement] = useState(true);
-  const childrenRef = useRef('');
+  const urlRef = useRef('');
 
 
 
@@ -36,11 +36,12 @@ const UrlInput = (props) => {
       return;
     }
     /*props.onAddGoal(enteredValue);*/
-    childrenRef.current.value = enteredValue;
-    const url = {
-      children : childrenRef.current.value,
+
+    urlRef.current.value = enteredValue;
+    const longtoshorturl = {
+      url : urlRef.current.value,
     }
-    props.onAddGoal(url);
+    props.onAddGoal(longtoshorturl);
   };
   
   
@@ -52,7 +53,7 @@ const UrlInput = (props) => {
         <input 
         type="text" 
         onChange={goalInputChangeHandler}
-        ref={childrenRef}
+        ref={urlRef}
         />
       </div>
       <Button type="submit">Shorten</Button>

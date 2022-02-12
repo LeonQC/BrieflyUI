@@ -10,7 +10,7 @@ function Home() {
     <>
       <Body />
       <InputForm />
-      <Footer />
+      <Footer/>
     </>
   );
 }

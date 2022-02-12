@@ -10,7 +10,8 @@ const UrlList = props => {
         <UrlItem 
         key={goal.id} 
         id={goal.id} 
-        children={goal.children}
+        longUrl={goal.longUrl}
+        shortUrl = {goal.shortUrl}
         onDelete={props.onDeleteItem}
         >
         </UrlItem>
@@ -21,19 +22,3 @@ const UrlList = props => {
 
 export default UrlList;
 
-
-
-/*<ul className="test">
-<li className="test1">
-{goal.text}
-</li>
-
-<li className="test2">
-{"https://brief.ly/31K0kwi"}
-</li>
-<li className="test2"> 
-  <button>copy</button>
-</li>
-
-</ul>
-*/
