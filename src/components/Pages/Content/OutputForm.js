@@ -110,23 +110,6 @@ const OutputForm = () => {
     );
   }
 
-  /*
-  if (error) {
-    return (
-      <section> 
-      <p>{error}</p>
-      </section>
-    )
-  }
-
-  if (isLoading) {
-    return (
-    <section> 
-    <p>Loading...</p>
-    </section>
-    )
-  }
-*/
 
 
 render() 
